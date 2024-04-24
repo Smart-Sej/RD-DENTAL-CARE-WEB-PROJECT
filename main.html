@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RD Dental Care Shop</title>
+<link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+<header>
+    <div class="navbar">
+        <div class="logo">
+            <img src="rdlogo.png" alt="logo" class="logo-img">
+        </div>
+        
+        <div class="title">
+            <h1>RD Dental Care's Oral Care Shopping</h1>
+        </div>
+        
+        <div class="cart-icon" onclick="openCartPage()">
+            <img src="shopping_cart.png" alt="Cart" class="cart-icon-img">
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="filters-box" id="filters">
+        <div class="filters">
+            
+            <label>Dental Products</label><br>
+            <label><input type="checkbox" id="toothbrush"  value="toothbrush"> Tooth Brush</label><br>
+            <label><input type="checkbox" id="electrictoothbrush"  value="electrictoothbrush"> Electric Tooth Brush</label><br>
+            <label><input type="checkbox" id="kidstoothbrush"  value="kidstoothbrush"> Kids Tooth Brush</label><br>
+            <label><input type="checkbox" id="dentalcarekits" value="dentalcarekits"> Dental Care Kits</label><br>
+            <label><input type="checkbox" id="breathfreshner" value="breathfreshner"> Breath Freshner</label><br>
+            <label><input type="checkbox" id="floss" value="floss"> Dental Floss</label><br>
+            
+            <br>
+
+            <label>Price Range:</label><br>
+            <label><input type="radio" id="under10" name="price" value="under10"> Under Rs. 100</label><br>
+            <label><input type="radio" id="100to500" name="price" value="100to500"> Rs. 100 - Rs. 500</label><br>
+            <label><input type="radio" id="500to1000" name="price" value="500to1000"> Rs. 500 - Rs. 1000</label><br>
+            <label><input type="radio" id="over1000" name="price" value="over1000"> Over Rs. 1000</label><br>
+            <br>
+            <button onclick="filterItems()">Apply Filters</button>
+        </div>
+    </div>
+    <div class="menu" id="menu"></div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
+

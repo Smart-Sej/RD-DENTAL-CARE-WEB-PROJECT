@@ -1,0 +1,115 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url(dentist.png);
+    background-color: rgba(226, 238, 240, 0.575);    
+    background-size: cover;  
+    background-repeat: no-repeat;
+    background-blend-mode:lighten;
+    padding-top: 50px;
+  }
+   
+  #Navbar {
+    max-width: 100%;
+    height: 30px;
+    background-color: #81BEBB;
+    position: fixed;
+    padding: 10px;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000; 
+    display: flex;
+    
+  }
+
+  .OtherLink {
+    align-items: flex-start;
+    text-decoration: none;
+    font-size: large;
+    margin-right: 15px; 
+  }
+
+  .NavLink {
+    margin-left: auto;
+    text-decoration: none;
+    font-size: large;
+    
+  }
+
+
+  .container {
+    width: 700px;
+    margin: 25px auto;
+    text-align: left;
+    
+    padding: 15px;
+    padding-right:0ch;
+    position: relative;
+    height: auto;
+    background: white;
+    border-radius: 20px;
+    transition: 0.75s box-shadow;
+    margin-top: 50px;
+  }
+
+  .container:hover {
+    box-shadow: 20px 20px 55px 0px rgba(255,255,255,255);
+  }
+  
+  .form-row {
+    margin-top: 20px;
+  }
+   
+  select, textarea {
+    width: 600px;
+  }
+  textarea {
+    height: 100px;
+  }
+   
+  input[type="submit"] {
+    margin-top: 25px;
+    padding: 5px 10px;
+    width: 70px;
+  }
+
+  .center-submit {
+    text-align: center;
+  }
+
+   
+  #email {width: 600px;}
+  #fullname {width: 600px;}
+  #preferred-time{width: 90px;}
+  #doctor{height: 25px;}
+
+  .tgt {
+    display: flex;
+    align-items: center;
+  }
+
+  .a{
+    margin-right: 120px;
+  }
+
+  label.required::after {
+    content: "*";
+    color: red;
+  }
+
+  h2 {
+    text-align: center;
+}
+
+.appointment-details {
+  color: red;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+
+

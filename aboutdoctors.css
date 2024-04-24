@@ -1,0 +1,54 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.doc-box {
+    width: 45%;
+    background-color:aquamarine;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.doc-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.caption {
+    padding: 20px;
+    color: #333;
+}
+
+.caption h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #333;
+}
+
+.caption h3 {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #000000;
+    margin-top: 10px;
+}
+
+/* Media Query for Responsive Design */
+@media screen and (max-width: 768px) {
+    .doc-box {
+        width: 90%;
+    }
+}

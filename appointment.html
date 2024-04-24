@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dental Appointment</title>
+    <link rel="stylesheet" type="text/css" href="styles1.css">
+
+</head>
+
+<body>
+    <div id="Navbar">
+        <a href="Sign_Up.html" target="blank" class="OtherLink">Home</a>
+        <a href="Sign_Up.html" target="blank" class="OtherLink">About Doctors</a>
+        <a href="Sign_Up.html" target="blank" class="OtherLink">Achievements</a>
+        <a href="Sign_Up.html" target="blank" class="NavLink">Book your appointment,Now!</a>
+    </div>
+    <centre><h2>Dental Appointment</h2></centre>
+    <div class="container">
+        <form id="appointment-form">
+            <div class="form-row">
+                <label for="fullname" class="required">Patient Full Name </label><br><br>
+                <input type="text" id="fullname" name="fullname" required><br><br>
+            </div>
+            <div class="form-row">
+                <label for="gender" class="required">Gender </label><br><br>
+                <div class="radio-group">
+                    <input type="radio" id="1" value="m" name="gender" required>
+                    <label for="1">Male</label>
+                    <input type="radio" id="2" value="f" name="gender">
+                    <label for="2">Female</label>
+                    <input type="radio" id="3" value="o" name="gender">
+                    <label for="3">Others</label><br>
+                </div>
+            </div>
+            <div class="form-row">
+                <label for="email" class="required">Email </label><br><br>
+                <input type="email" id="email" name="email" required><br><br>
+            </div>
+
+            <div class="tgt">
+                <div class="a">
+                    <label for="appointment-date" class="required">Appointment Date </label>
+                    <br>
+                    <input type="date" id="appointment-date" name="appointment-date" value="Select:" required min="2024-04-23" max="2024-04-29">
+                    
+                </div>
+                <div class="b">
+                    <br>
+                    <label for="preferred-time" class="required">Preferred Time </label>
+                    <br>
+                    <select id="preferred-time" name="preferred-time" required>
+                        <option value="None">Select:</option>
+                        <option value="9:00">9:00 AM</option>
+                        <option value="10:00">10:00 AM</option>
+                        <option value="11:00">11:00 AM</option>
+                        <option value="3:00">3:00 PM</option>
+                        <option value="4:00">4:00 PM</option>
+                        
+                    </select><br><br>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <label for="doctor" class="required">Doctor </label><br><br>
+                <select id="doctor" name="doctor">
+                    
+                </select><br><br>
+            </div>
+
+            <div class="form-row">
+                <label for="description">Tell us about your health issues:</label><br><br>
+                <textarea id="description" name="description"></textarea><br><br>
+            </div>
+
+            <div class="form-row center-submit">
+                <input type="submit" value="Submit" id="submit-btn">
+                <div class="appointment-details hidden" id="appointment-details"></div>
+            </div>
+            
+        </form>
+    </div>
+    
+    <script src="script.js"></script>
+
+</body>
+
+</html>

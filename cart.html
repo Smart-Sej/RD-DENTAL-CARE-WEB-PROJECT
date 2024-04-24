@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cart</title>
+<link rel="stylesheet" href="styles.css"> <!-- Include the same stylesheet as the main webpage -->
+</head>
+<body>
+<h1>Cart Items</h1>
+<div class="container"> <!-- Use the same container style as on the main webpage -->
+    <div class="menu" id="cart-items">
+        <!-- Cart items will be displayed here -->
+    </div>
+    <div id="total"></div> <!-- Display total price here -->
+</div>
+
+<script>
+// Retrieve cart items from sessionStorage
+const cartItems = JSON.parse(sessionStorage.getItem('cartItems'));
+
+// Display cart items
+const cartItemsContainer = document.getElementById('cart-items');
+const totalContainer = document.getElementById('total');
+let totalPrice = 0; // Initialize total price
+
+if (cartItems && cartItems.length > 0) {
+    cartItems.forEach(item => {
+        const cartItemCard = document.createElement('div');
+        cartItemCard.classList.add('card'); // Apply card style
+        cartItemCard.innerHTML = `
+            <h3>${item.name}</h3>
+            <img src="${item.image}" alt="${item.name}" width="330px" height="300px">
+            <p>Price: Rs. ${item.price.toFixed(2)}</p>
+        `;
+        cartItemsContainer.appendChild(cartItemCard);
+
+        // Add item price to total
+        totalPrice += item.price;
+    });
+
+    // Display total price
+    totalContainer.textContent = `Total: Rs. ${totalPrice.toFixed(2)}`;
+} else {
+    const emptyCartMessage = document.createElement('p');
+    emptyCartMessage.textContent = "Your cart is empty";
+    cartItemsContainer.appendChild(emptyCartMessage);
+}
+</script>
+
+</body>
+</html>

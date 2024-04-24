@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up!</title>
+    <style>
+        #Navbar {
+        max-width: 100%;
+        height: 30px;
+        background-color: #81BEBB;
+        position: fixed;
+        padding: 10px;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000; 
+        display: flex;
+        
+    }
+
+    .OtherLink {
+        align-items: flex-start;
+        text-decoration: none;
+        font-size: large;
+        margin-right: 15px; 
+    }
+
+    .NavLink {
+        margin-left: auto;
+        text-decoration: none;
+        font-size: large;
+        
+    }
+
+        body{
+            background-image: url(dentist.png);
+            background-color: rgba(10, 218, 255, 0.21);    
+            background-size: cover;  
+            background-repeat: no-repeat;
+            background-blend-mode:lighten; 
+        }
+        #content{
+            margin:5px;
+            
+        }
+        #signup_box{
+            border: 12px solid #8FC0AF;
+            background-color: #DBF5EC;
+        }
+        h2{
+            font-size:xx-large;
+        }
+        #signup_box{
+            max-width: 400px;
+            margin: 50px auto;
+            padding-top: 0px;
+            padding: 20px;
+            
+            border-radius: 21px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.258);
+            
+            position: fixed;
+            width: 400px;
+            height: 450px;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            transform: translateX(-70%);
+        }
+        #text,.email,#pass{
+            font-size: x-large;
+            max-width:439px;
+            max-height:71px;
+            border-radius:29px; 
+            margin:3px auto;
+            padding: 5px;
+            
+        }
+        #text{
+            font-size: x-large;
+            max-width:439px;
+            max-height:71px;
+            border-radius:29px; 
+            margin:5px auto;
+            padding: 5px;
+            padding-left: 45px;
+            padding-right: 10px;
+
+        }
+        #submit{
+            font-size: x-large;
+            max-width: 208px;
+            max-height:71px;
+            border-radius:21px; 
+            padding: 5px;
+            margin: 10px;
+        }
+        #sign_in{
+            font-size: x-large;
+            text-decoration: none;
+        }
+        #logo{
+            position: absolute;
+            top:100px;
+            right:315px;
+            max-width:55px;
+            max-height:55px;
+            padding: 8px;
+        }
+        p{
+            font-size: x-large;
+        }
+    </style>
+</head>
+<body>
+    <div id="Navbar">
+        <a href="Sign_Up.html" target="blank" class="OtherLink">Home</a>
+        <a href="Sign_Up.html" target="blank" class="OtherLink">About Doctors</a>
+        <a href="Sign_Up.html" target="blank" class="OtherLink">Achievemens</a>
+        <a href="Sign_Up.html" target="blank" class="NavLink">Book your appointment,Now!</a>
+    </div>
+    <div id="signup_box">
+        <div id="content">
+            <h2>Sign Up!</h2>
+            <div id="email_google">
+                <button id="text" type="button"><img src="google_logo.png" id="logo">Sign Up through Gmail</button>
+            </div>
+            <div>
+                <p>or</p>
+            </div>
+            <div class="email">
+                <input type="email" class="email" placeholder="Email">
+            </div>
+            <div class="pass">
+                <input type="password" id="pass" placeholder="Password">
+                <div id="message"></div>
+            </div>
+            <button id="submit" type="submit" onclick="redirect()">Sign up!</button>
+            <div id="sign_in">
+                <p>Already have an account? <a href="Sign_In.html">Sign In!</a></p>
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("pass").value;
+            var message = document.getElementById("message");
+            
+            var isValid = false;
+            var errorMessage = "";
+
+            while (!isValid) {
+                if (password.length < 8) {
+                    errorMessage = "Password must be at least 8 characters long.";
+                    break;
+                }
+                
+                if (!/[a-z]/.test(password)) {
+                    errorMessage = "Password must contain at least one lowercase letter.";
+                    break;
+                }
+                
+                if (!/[A-Z]/.test(password)) {
+                    errorMessage = "Password must contain at least one uppercase letter.";
+                    break;
+                }
+                
+                if (!/\d/.test(password)) {
+                    errorMessage = "Password must contain at least one number.";
+                    break;
+                }
+                
+                if (!/[!@#$%^&*]/.test(password)) {
+                    errorMessage = "Password must contain at least one special character.";
+                    break;
+                }
+                
+                isValid = true;
+            }
+            
+            if (isValid) {
+                message.innerText = "Password is strong!";
+                return true;
+            } else {
+                message.innerText = errorMessage;
+                return false;
+            }
+        }
+
+        function validateEmail(email) {
+            var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+
+        function redirect(){
+            var passwordIsStrong = checkPassword();
+            var emailIsCorrect = validateEmail();
+            if (passwordIsStrong & emailIsCorrect) {
+                window.location.replace("appointment.html");
+            }
+            else{
+                alert("Password or email is wrong");
+            }
+            
+        }
+
+        
+
+    </script>
+    
+</body>
+</html>
